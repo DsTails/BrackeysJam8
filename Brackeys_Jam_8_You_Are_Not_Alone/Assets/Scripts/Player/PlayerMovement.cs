@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
+
+
 public class PlayerMovement : MonoBehaviour
 {
     //Declaring controller
