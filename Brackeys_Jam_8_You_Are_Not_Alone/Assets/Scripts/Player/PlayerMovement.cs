@@ -50,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             jumping = true;
-            //GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
             Debug.Log("Jumping");
         }
     }
