@@ -30,6 +30,13 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+
+	[Header("BetterJump Variables")]
+	[Range(10, 50)]
+	public float jumpVelocity;
+	public float fallMultiplier = 2.5f;
+	public float lowJumpMultiplier = 2f;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -41,7 +48,20 @@ public class CharacterController2D : MonoBehaviour
 			OnCrouchEvent = new BoolEvent();
 	}
 
-	private void FixedUpdate()
+    private void Update()
+    {
+        if(m_Rigidbody2D.velocity.y < 0)
+        {
+			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+			Debug.Log("High Jump");
+        }else if(m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+			Debug.Log("Low Jump");
+		}
+    }
+
+    private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
@@ -128,7 +148,8 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			//m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			m_Rigidbody2D.velocity = Vector2.up * jumpVelocity;
 		}
 	}
 
