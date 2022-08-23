@@ -100,6 +100,9 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  jumpVelocity: 15
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 7
 --- !u!50 &4882389241578009810
 Rigidbody2D:
   serializedVersion: 4
