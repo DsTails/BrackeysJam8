@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1946149125685155174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6013455940442074902}
+  m_Layer: 0
+  m_Name: ThrowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6013455940442074902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946149125685155174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.94, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5459383856998865037}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4882389241089817450
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,6 +76,7 @@ GameObject:
   - component: {fileID: 4882389241578009646}
   - component: {fileID: 4882389241578009645}
   - component: {fileID: 4882389241578009647}
+  - component: {fileID: 949475048717137350}
   - component: {fileID: 8463810360838947119}
   - component: {fileID: 1793409609218312440}
   m_Layer: 0
@@ -69,6 +101,7 @@ Transform:
   - {fileID: 4882389241736478480}
   - {fileID: 4882389242758134520}
   - {fileID: 4882389241089817451}
+  - {fileID: 5459383856998865037}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -94,6 +127,9 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 4882389242758134520}
   m_CeilingCheck: {fileID: 4882389241089817451}
   m_CrouchDisableCollider: {fileID: 0}
+  m_Grounded: 0
+  m_Rigidbody2D: {fileID: 0}
+  m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -169,6 +205,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 80
+  canWallJump: 0
+  wallSliding: 0
+  wallJumpTime: 0
+  wallSlideSpeed: 0
+  wallDistance: 0
+--- !u!114 &949475048717137350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882389241578009809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca10b526d83b28846bd06919c2aa58b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  canGrabThrow: 0
+  isBeingGrabbed: 0
+  isGrabbing: 0
+  isBeingThrown: 0
+  whatAreObjects:
+    serializedVersion: 2
+    m_Bits: 384
+  throwPoint: {fileID: 6013455940442074902}
+  throwPivot: {fileID: 5459383856998865037}
+  grabDistance: 2.5
+  throwForce: 10
+  grabPoint: {fileID: 8915446562106864994, guid: 1cc244e186b6c9b49bbb346f7a99ce28, type: 3}
+  numberOfPoints: 20
+  spaceBetweenPoint: 0.1
 --- !u!114 &8463810360838947119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,4 +407,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4882389241578009644}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6549271936413394282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5459383856998865037}
+  m_Layer: 0
+  m_Name: ThrowPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5459383856998865037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6549271936413394282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6013455940442074902}
+  m_Father: {fileID: 4882389241578009644}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
