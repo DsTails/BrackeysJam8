@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 86
+  controlID: 100
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 2104
+  controlID: 101
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 2105
+  controlID: 102
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -295,8 +295,8 @@ MonoBehaviour:
     y: 0
     width: 419
     height: 561
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -343,22 +343,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts/Player
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts/Player
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity Projects\Github\BrackeysJam8\Brackeys_Jam_8_You_Are_Not_Alone
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 10560000
-    m_LastClickedID: 22032
-    m_ExpandedIDs: 00000000fe5500000056000002560000
+    m_SelectedIDs: e8550000
+    m_LastClickedID: 21992
+    m_ExpandedIDs: 00000000be550000c0550000c2550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -386,7 +386,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fe5500000056000002560000
+    m_ExpandedIDs: 00000000be550000c0550000c2550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -514,9 +514,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 8e7d0000
+      m_SelectedIDs: 520a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: d66bffffde6cffff646fffff6e72ffff7681ffff7e82ffff1883ffff7898ffff229bffff449bffff469bffff009effff0ca2ffffb6a5ffff02abffffc2afffffcab0ffff44b4ffff90b8ffff5cbeffff68c3ffff1ec8ffff0ccaffffa8ccffff08d3ffff4ad4ffff6cd4ffff6ed4ffff10e1ffff12e1ffff38e2ffffb0e5ffffb2e5ffffbee6ffff36e7fffff8e7fffffae7ffff0ce9ffff24fbffff
+      m_ExpandedIDs: bef6ffffcaf7ffff86f9ffff24fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -787,9 +787,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.4694643, y: -5.04016, z: -0.21724077}
+    m_Target: {x: -1.9843664, y: -0.17843676, z: -0.08881021}
     speed: 2
-    m_Value: {x: -3.4694643, y: -5.04016, z: -0.21724077}
+    m_Value: {x: -1.9843664, y: -0.17843676, z: -0.08881021}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -840,9 +840,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.3249784
+    m_Target: 9.539027
     speed: 2
-    m_Value: 7.3249784
+    m_Value: 9.539027
   m_Ortho:
     m_Target: 1
     speed: 2

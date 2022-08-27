@@ -94,6 +94,7 @@ public class PlayerType : MonoBehaviour, IObjectGrabInterface
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         throwDirection = mousePos - startThrowPos;
+        throwDirection= throwDirection * (controller.m_FacingRight ? 1 : -1);
         throwPivot.transform.right = throwDirection;
 
         if (Input.GetMouseButton(0))
@@ -170,7 +171,7 @@ public class PlayerType : MonoBehaviour, IObjectGrabInterface
         isGrabbing = false;
         foundObject.transform.parent = null;
         foundObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
-        foundObject.GetComponent<Rigidbody2D>().velocity = throwPoint.transform.right * throwForce;
+        foundObject.GetComponent<Rigidbody2D>().velocity = (throwPoint.transform.right * (throwForce * (controller.m_FacingRight ? 1 : -1)));
         foundObject = null;
         grabbedObject.ResetObjectGrab();
         grabbedObject = null;
@@ -213,7 +214,7 @@ public class PlayerType : MonoBehaviour, IObjectGrabInterface
 
     Vector2 PointPosition(float t)
     {
-        Vector2 position = (Vector2)throwPoint.position + (throwDirection.normalized * throwForce * t) + 0.5f * Physics2D.gravity * (t * t);
+        Vector2 position = (Vector2)throwPoint.position + ((throwDirection.normalized * (throwForce * (controller.m_FacingRight ? 1 : -1)) * t) + 0.5f * Physics2D.gravity * (t * t));
         return position;
     }
 }
